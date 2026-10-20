@@ -1,9 +1,5 @@
 # Image Dimensionality Reduction with Convolutional Autoencoders
 
-## GitHub Repository Title
-**Image Dimensionality Reduction and Reconstruction Using Autoencoders**
-
-## Repository Description
 A deep learning project using convolutional autoencoders to compress 28×28 grayscale images of cars and planes from 784 pixels to a 128-dimensional latent representation. Compares baseline and modified architectures using reconstruction quality, visual inspection, and Structural Similarity Index (SSIM).
 
 ---
@@ -128,16 +124,6 @@ The notebook's current outputs report the following average SSIM values:
 - The modified architecture adds convolutional layers, which may help the encoder learn richer image features and the decoder reconstruct image structure more effectively.
 - These scores should be interpreted in light of the tuning protocol: because trial selection currently uses test-set SSIM, the tuned score is not an independent final test estimate. Re-run tuning using validation SSIM before making a definitive claim about the best tuned model.
 
-## Repository Structure
-
-```text
-.
-├── Gambar.ipynb
-└── README.md
-```
-
-If you include the dataset, document its source, license, and folder structure. Avoid uploading dataset files unless redistribution is permitted.
-
 ## Requirements
 
 The notebook uses:
@@ -151,50 +137,7 @@ The notebook uses:
 - scikit-image
 - Jupyter Notebook
 
-Install the main dependencies with:
 
-```bash
-pip install numpy pandas matplotlib pillow scikit-learn tensorflow scikit-image jupyter
-```
-
-For reproducibility, record the Python and library versions used for the experiments.
-
-## How to Run
-
-1. Clone or download this repository.
-2. Place the dataset in the expected directory structure, or update `dataset_path` in the notebook.
-3. Install the dependencies.
-4. Open the notebook:
-
-   ```bash
-   jupyter notebook Gambar.ipynb
-   ```
-
-5. Run the cells in order to load the images, train the models, and reproduce the evaluation.
-
-## Limitations
-
-- The experiment covers only two image classes: Car and Plane.
-- Images are converted to grayscale and resized to 28 × 28, which removes color and fine spatial details.
-- SSIM evaluates reconstruction similarity but does not directly measure whether the latent representation is useful for a downstream task.
-- Results depend on model initialization, training settings, and the dataset split.
-- Hyperparameter selection should use validation data; the current tuning procedure needs this correction before the tuned test result can be considered final.
-- The model is an educational dimensionality-reduction experiment, not a production image-compression system.
-
-## Potential Improvements
-
-- Select hyperparameters using validation SSIM and evaluate the selected model on the test set once.
-- Report mean, median, and standard deviation of per-image SSIM.
-- Compare SSIM separately for Car and Plane.
-- Fix random seeds and repeat training to assess variability.
-- Report model parameter counts and training time.
-- Save and document the selected model.
-- Compare original and reconstructed images using the same test examples.
-
-## Author
-
-**Angelyn Nathasya Br Marpaung**  
-Data Science student — BINUS University
 
 ---
 
