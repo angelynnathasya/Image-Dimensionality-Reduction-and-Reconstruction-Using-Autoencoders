@@ -137,8 +137,3 @@ The notebook uses:
 - scikit-image
 - Jupyter Notebook
 
-
-
----
-
-*Academic project on image dimensionality reduction and reconstruction using deep learning.*
